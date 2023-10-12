@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\EmailDeTeste;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/enviar-email', function () {
+    // Envie o e-mail de teste
+    Mail::to('destinatario@example.com')->send(new EmailDeTeste());
+
+    return 'E-mail de teste enviado com sucesso!';
+});
 
 Route::get('/', function () {
     return view('welcome');

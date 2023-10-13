@@ -29,7 +29,9 @@ Este é o backend de um teste técnico FullStack. Os dois passos do teste, assim
 
     Dada a natureza deste repositório, apenas a parte 1 pode ser testada se apenas este repositório for baixado. Para testar o aplicativo completo, clone também o frontend em:
 
-[Parte2] (https://github.com/Lukelupus/USUARIOS-DESPESAS-MVP)
+[Parte2] (https://github.com/Lukelupus/USUARIOS-DESPESAS-MVP):
+
+Faça em Vue.js uma tela de gestão de usuários (CRUD) utilizando sua API. Para facilitar o desenvolvimento, deve-se usar UI framework baseado em Vue.js: Quasar
 
 ## Pré-requisitos para teste local
 

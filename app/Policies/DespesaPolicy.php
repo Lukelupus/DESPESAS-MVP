@@ -13,7 +13,7 @@ class DespesaPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -21,15 +21,15 @@ class DespesaPolicy
      */
     public function view(User $user, Despesa $despesa): bool
     {
-        return $user->id === $despesa->usuario_id;
+        return $user->id === $despesa->user_id;
     }
 
     /**
-     * Determine whether the user can create models.
+     * Determine whether the user can create models. For tests, it will be return true
      */
     public function create(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -37,7 +37,7 @@ class DespesaPolicy
      */
     public function update(User $user, Despesa $despesa): bool
     {
-        return $user->id === $despesa->usuario_id;
+        return $user->id === $despesa->user_id;
     }
 
     /**
@@ -45,7 +45,7 @@ class DespesaPolicy
      */
     public function delete(User $user, Despesa $despesa): bool
     {
-        return $user->id === $despesa->usuario_id;
+        return $user->id === $despesa->user_id;
     }
 
     /**
@@ -53,7 +53,7 @@ class DespesaPolicy
      */
     public function restore(User $user, Despesa $despesa): bool
     {
-        //
+        return $user->id === $despesa->user_id;
     }
 
     /**
@@ -61,6 +61,6 @@ class DespesaPolicy
      */
     public function forceDelete(User $user, Despesa $despesa): bool
     {
-        //
+        return $user->id === $despesa->user_id;
     }
 }

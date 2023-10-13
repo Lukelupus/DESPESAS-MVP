@@ -12,19 +12,16 @@ use Carbon\Carbon;
 class DespesaController extends Controller
 {
 
-    // public function __construct()
-    // {
-    //     $this->authorizeResource(Despesa::class, 'despesa');
-    // }
 
     public function index()
     {
-        $despesas = Despesa::all();
+        $despesas = Despesa::with('user')->get();
+
         return response()->json($despesas);
     }
     public function show($id)
     {
-        $despesa = Despesa::find($id);
+        $despesa = $despesa = Despesa::with('user')->find($id);
 
         if (!$despesa) {
             return response()->json(['message' => 'Despesa não encontrada'], 404);
